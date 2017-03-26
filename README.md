@@ -121,7 +121,8 @@ The keyword argument `init` is used to select the distribution which is sampled 
 
 The default selection (i.e. applied if no selection is made) is `:glorot_logistic_uniform` for layers with logistic activations, `:glorot_tanh_uniform` for layers with tanh activations, `:he_uniform` for layers with relu activations, and `Normal(0, 0.01)` for the WordEmbeddingLayer.
 
-See [here](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/init.html) for my understanding of the merits of the different named options.
+See here for my understanding of the merits of the different named options - [html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/Demo_Initialise_Weights.html) (view in browser) or 
+[ipynb file](demo/Demo_Initialise_Weights.ipynb) (run in Jupyter)
 
 #### Step 4 - Create output layers
 These are constructed in a similar way to the hidden layers:  
