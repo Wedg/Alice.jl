@@ -140,4 +140,4 @@ There is 1 constructor function with 2 methods and 1 keyword argument:
 - `NeuralNet(databox, layers, λ)`
 - `NeuralNet(databox, layers, λ, regularisation = :L2)`
 
-  (`databox` is as defined above, `layers` is a vector of layers, `λ` is the regularisation parameter and , `regularisation` is the keyword argument for the type of regularisation - options are `:L1` and `:L2` (the default))
+  (`databox` is as defined above, `layers` is a vector of layers (typically 1 input layer, many hidden layers, and 1 output layer), `λ` is the regularisation parameter and , `regularisation` is the keyword argument for the type of regularisation - options are `:L1` and `:L2` (the default))
