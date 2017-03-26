@@ -14,12 +14,16 @@ There are 3 demos that display almost all the functionality. All the data for ea
 #### MNIST
 ![](demo/mnist/mnist.jpg)  
 Predict the digit label (1 to 9) of each image.  
-[html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/mnist/Demo_MNIST_28x28.html) (view in browser) or 
+Feedforward Neural Network and Convolutional Neural Network - [html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/mnist/Demo_MNIST_28x28.html) (view in browser) or 
 [ipynb file](demo/mnist/Demo_MNIST_28x28.ipynb) (run in Jupyter)
 
 #### STL10
-1. 
-2. 
+![](demo/stl10/stl10_8.jpg)  
+Predict the object in each image from 4 classes (airplane, car, cat, dog).  
+Part 1 - Sparse Autoencoder - [html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/stl10/Demo_STL10_A_Sparse_Autoencoder.html) (view in browser) or 
+[ipynb file](demo/stl10/Demo_STL10_A_Sparse_Autoencoder.ipynb) (run in Jupyter)  
+Part 2 - Convolutional Neural Network - [html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/stl10/Demo_STL10_B_Convolution_and_Pooling.html) (view in browser) or 
+[ipynb file](demo/stl10/Demo_STL10_B_Convolution_and_Pooling.ipynb) (run in Jupyter) 
 
 #### Word Embedding
 1. 
