@@ -141,3 +141,38 @@ There is 1 constructor function with 2 methods and 1 keyword argument:
 - `NeuralNet(databox, layers, λ, regularisation = :L2)`
 
   (`databox` is as defined above, `layers` is a vector of layers (typically 1 input layer, many hidden layers, and 1 output layer), `λ` is the regularisation parameter and , `regularisation` is the keyword argument for the type of regularisation - options are `:L1` and `:L2` (the default))
+
+
+#### An Example
+In the MNIST demo the first feedforward neural network is created as follows:
+```jlcon
+# Data Box and Input Layer
+databox = Data(train_images, train_labels, val_images, val_labels)
+batch_size = 128
+input = InputLayer(databox, batch_size)
+
+# Fully connected hidden layers
+dim = 30
+fc1 = FullyConnectedLayer(size(input), dim, activation = :tanh)
+fc2 = FullyConnectedLayer(size(fc1), dim, activation = :tanh)
+
+# Softmax Output Layer
+dim_in = 30
+num_classes = 10
+output = SoftmaxOutputLayer(databox, size(fc2), num_classes)
+
+# Model
+λ = 1e-3    # Regularisation
+net = NeuralNet(databox, [input, fc1, fc2, output], λ, regularisation=:L2)
+```
+
+This creates the following:
+```jlcon
+Neural Network
+Training Data Dimensions - (28,28,50000)
+Layers:
+Layer 1 - InputLayer{Float64}, Dimensions - (28,28,128)
+Layer 2 - FullyConnectedLayer{Float64}, Activation - tanh, Dimensions - (30,128)
+Layer 3 - FullyConnectedLayer{Float64}, Activation - tanh, Dimensions - (30,128)
+Layer 4 - SoftmaxOutputLayer{Float64,Int64}, Dimensions - (10,128)
+```
