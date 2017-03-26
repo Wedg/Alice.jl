@@ -194,3 +194,11 @@ There are 2 broad options for training:
 
   (Positional arguments - `net` is the neural network)  
   (Keyword arguments - `maxiter` is the maximum number of iterations through the training set (will stop before that if a tolerance is achieved) (default is `100`), `algorithm` is any of the NLopt provided algorithms (default is `:LD_LBFGS`))
+
+#### Visualising the training loss
+If the `train` function has been used there is a plotting function to display the training progress:  
+- `plot_loss_history(net, last_train_every, full_train_every, val_every)`
+
+  (`net` is the neural net, `last_train_every`, `full_train_every` and `val_every` are as defined above in the `train` function but here they are just integers i.e. not keywords)
+  
+This will produce something like this:
