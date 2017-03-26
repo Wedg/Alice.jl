@@ -31,6 +31,10 @@ Word Embedding Network - [html file](http://htmlpreview.github.com/?https://gith
 [ipynb file](demo/ngrams/Demo_Word_Embedding.ipynb) (run in Jupyter)
 
 ## Documentation
+There are a number of types/structs defined that are used to build a neural network. There is a data container to place all training, validation and test sets. And there are a number of network layers (input, hidden and output). The current available list is the following:
+
+Data container:
+- Data
 
 Input Layer:
 - InputLayer
@@ -48,3 +52,14 @@ Output Layers:
 - MultiLinearOutputLayer
 - LogisticOutputLayer
 - SoftmaxOutputLayer
+
+## Building a Neural Network
+#### Step 1 - Place data in a data container
+There are 4 functions available:  
+(Here, `X_train` is an array of training data, `y_train` is an array of target data for the training set, `X_val` is an array of validation data, `y_val` is an array of target data for the validation set, `X_test` is an array of test data, and `y_test` is an array of target data for the test set.)  
+- `data(X_train)`
+- `data(X_train, y_train)`
+- `data(X_train, y_train, X_val, y_val)`
+- `data(X_train, y_train, X_val, y_val, X_test, y_test)`
+
+Note that a reference to the original data is used as opposed to a copy for better memory management. So if the data is changed that will also change the data in this data container.
