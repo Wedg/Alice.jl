@@ -31,7 +31,7 @@ Word Embedding Network - [html file](http://htmlpreview.github.com/?https://gith
 [ipynb file](demo/ngrams/Demo_Word_Embedding.ipynb) (run in Jupyter)
 
 ## Documentation
-There are a number of types/structs defined that are used to build a neural network. There is a data container to place all training, validation and test sets. And there are a number of network layers (input, hidden and output). The current available list is the following:
+There are a number of types/structs defined that are used to build a neural network. There is a data container to place all training, validation and test sets in. And there are a number of network layers (input, hidden and output). The current available list is:
 
 Data container:
 - Data
