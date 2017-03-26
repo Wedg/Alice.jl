@@ -202,3 +202,15 @@ If the `train` function has been used there is a plotting function to display th
   (`net` is the neural net, `last_train_every`, `full_train_every` and `val_every` are as defined above in the `train` function but here they are just integers i.e. not keywords)
   
 This will produce something like this:
+
+
+
+## Evaluating performance
+The `train` function will display the results of training on the training and test sets (unless you've chosen not to display). But to manually evaluate performance there are a number of functions:
+- `loss(net, X, y)` - provides training loss on inputs `X` and target `y` e.g. `X_train` and `y_train` as defined above
+- `val_loss(net, X, y)` - provides validation loss (without the regularisation cost) on `X` and `y`
+- `loss_and_accuracy(net, X, y)` - provides training loss and accuracy percentage on `X` and `y`
+- `val_loss_and_accuracy(net, X, y)` - provides validation loss (without regularisation cost) on `X` and `y`
+- `accuracy(net, X, y)` - provides the accuracy percentage
+
+Note that the accuracy functions will only work for Logistic and Softmax output layers.
