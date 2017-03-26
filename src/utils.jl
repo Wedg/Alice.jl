@@ -158,11 +158,59 @@ load_ngrams() = load(ngrampath, "train_data", "valid_data", "test_data", "vocab"
 
 # stl10 demo data
 stl10path = joinpath(rootpath, "demo", "stl10")
-stl10patches = joinpath(stl10path, "stl_sampled_patches.jld")
-load_patches() = load(stl10patches, "patches")
-stl10trainsubset = joinpath(stl10path, "stl_train_subset.jld")
-load_train_subset() = load(stl10trainsubset, "train_images", "train_labels")
-stl10testsubset = joinpath(stl10path, "stl_test_subset.jld")
-load_test_subset() = load(stl10testsubset, "test_images", "test_labels")
-stl10features = joinpath(stl10path, "stl_features.jld")
+
+function load_patches()
+    patches1 = load(joinpath(stl10path, "stl_sampled_patches1.jld"), "patches1")
+    patches2 = load(joinpath(stl10path, "stl_sampled_patches2.jld"), "patches1")
+    patches3 = load(joinpath(stl10path, "stl_sampled_patches3.jld"), "patches1")
+    patches4 = load(joinpath(stl10path, "stl_sampled_patches4.jld"), "patches1")
+    patches5 = load(joinpath(stl10path, "stl_sampled_patches5.jld"), "patches1")
+    patches6 = load(joinpath(stl10path, "stl_sampled_patches6.jld"), "patches1")
+    patches7 = load(joinpath(stl10path, "stl_sampled_patches7.jld"), "patches1")
+    patches8 = load(joinpath(stl10path, "stl_sampled_patches8.jld"), "patches1")
+    return hcat(patches1, patches2, patches3, patches4, patches5, patches6,
+    patches7, patches8)
+end
+
+function load_train_subset()
+    train_images1, train_labels1 = load(joinpath(stl10path, "stl_train_subset1.jld"), "train_images1", "train_labels1")
+    train_images2, train_labels2 = load(joinpath(stl10path, "stl_train_subset2.jld"), "train_images2", "train_labels2")
+    train_images3, train_labels3 = load(joinpath(stl10path, "stl_train_subset3.jld"), "train_images3", "train_labels3")
+    train_images4, train_labels4 = load(joinpath(stl10path, "stl_train_subset4.jld"), "train_images4", "train_labels4")
+    train_images5, train_labels5 = load(joinpath(stl10path, "stl_train_subset5.jld"), "train_images5", "train_labels5")
+    train_images6, train_labels6 = load(joinpath(stl10path, "stl_train_subset6.jld"), "train_images6", "train_labels6")
+    train_images7, train_labels7 = load(joinpath(stl10path, "stl_train_subset7.jld"), "train_images7", "train_labels7")
+    train_images8, train_labels8 = load(joinpath(stl10path, "stl_train_subset8.jld"), "train_images8", "train_labels8")
+    train_labels = cat(4, train_images1, train_images2, train_images3, train_images4,
+                          train_images5, train_images6, train_images7, train_images8)
+    train_labels = vcat(train_labels1, train_labels2, train_labels3, train_labels4,
+                        train_labels5, train_labels6, train_labels7, train_labels8)
+    return train_images, train_labels
+end
+
+function load_test_subset()
+    test_images1, test_labels1 = load(joinpath(stl10path, "stl_test_subset1.jld"), "test_images1", "test_labels1")
+    test_images2, test_labels2 = load(joinpath(stl10path, "stl_test_subset2.jld"), "test_images2", "test_labels2")
+    test_images3, test_labels3 = load(joinpath(stl10path, "stl_test_subset3.jld"), "test_images3", "test_labels3")
+    test_images4, test_labels4 = load(joinpath(stl10path, "stl_test_subset4.jld"), "test_images4", "test_labels4")
+    test_images5, test_labels5 = load(joinpath(stl10path, "stl_test_subset5.jld"), "test_images5", "test_labels5")
+    test_images6, test_labels6 = load(joinpath(stl10path, "stl_test_subset6.jld"), "test_images6", "test_labels6")
+    test_images7, test_labels7 = load(joinpath(stl10path, "stl_test_subset7.jld"), "test_images7", "test_labels7")
+    test_images8, test_labels8 = load(joinpath(stl10path, "stl_test_subset8.jld"), "test_images8", "test_labels8")
+    test_images9, test_labels9 = load(joinpath(stl10path, "stl_test_subset9.jld"), "test_images9", "test_labels9")
+    test_images10, test_labels10 = load(joinpath(stl10path, "stl_test_subset10.jld"), "test_images10", "test_labels10")
+    test_images11, test_labels11 = load(joinpath(stl10path, "stl_test_subset11.jld"), "test_images11", "test_labels11")
+    test_images12, test_labels12 = load(joinpath(stl10path, "stl_test_subset12.jld"), "test_images12", "test_labels12")
+    test_images13, test_labels13 = load(joinpath(stl10path, "stl_test_subset13.jld"), "test_images13", "test_labels13")
+    test_labels = cat(4, train_images1, train_images2, train_images3, train_images4,
+                         train_images5, train_images6, train_images7, train_images8,
+                         train_images9, train_images10, train_images11, train_images12
+                         train_images13)
+    test_labels = vcat(train_labels1, train_labels2, train_labels3, train_labels4,
+                       train_labels5, train_labels6, train_labels7, train_labels8,
+                       train_labels9, train_labels10, train_labels11, train_labels12,
+                       train_labels13)
+    return test_images, test_labels
+end
+
 load_features() = load(stl10features, "W", "b")
