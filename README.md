@@ -203,7 +203,7 @@ If the `train` function has been used there is a plotting function to display th
   (`net` is the neural net, `last_train_every`, `full_train_every` and `val_every` are as defined above in the `train` function but here they are just integers i.e. not keywords)
   
 This will produce something like this:
-![](demo/Loss_history.png)
+![](demo/Loss_history.jpg)
 
 
 ## Evaluating performance
