@@ -187,3 +187,10 @@ There are 2 broad options for training:
 
   (Positional arguments - `net` is the neural network, `num_epochs` is the total number of epochs to run through, `α` is the learning rate, `μ` is the momentum parameter)  
   (Keyword arguments - `nesterov` is whether to use Nesterov's accelerated gradient method (default is `true`, if `false` uses standard momentum method), `shuffle` is whether to randomly shuffle the data before each epoch (default is `false`), `last_train_every` selects the epoch intervals to display the last batch training error (default is `1` i.e. every epoch), `full_train_every` selects the epoch intervals to display the loss on the full training set (default is `num_epochs` i.e. only at the end), and `val_every` selects the epoch intervals to display the loss on the validation set (default is `num_epochs` i.e. only at the end))
+
+`train_nlopt` function:
+
+- `train_nlopt(net[, maxiter, algorithm])`
+
+  (Positional arguments - `net` is the neural network)  
+  (Keyword arguments - `maxiter` is the maximum number of iterations through the training set (will stop before that if a tolerance is achieved) (default is `100`), `algorithm` is any of the NLopt provided algorithms (default is `:LD_LBFGS`))
