@@ -213,4 +213,4 @@ function load_test_subset()
     return test_images, test_labels
 end
 
-load_features() = load(stl10features, "W", "b")
+load_features() = load(joinpath(stl10path, "stl_features.jld"), "W", "b")
