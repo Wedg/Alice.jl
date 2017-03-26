@@ -157,7 +157,6 @@ fc1 = FullyConnectedLayer(size(input), dim, activation = :tanh)
 fc2 = FullyConnectedLayer(size(fc1), dim, activation = :tanh)
 
 # Softmax Output Layer
-dim_in = 30
 num_classes = 10
 output = SoftmaxOutputLayer(databox, size(fc2), num_classes)
 
