@@ -64,7 +64,32 @@ There are 4 functions available:
 
 Note that a reference to the original data is used as opposed to a copy for better memory management. So if the data is changed that will also change the data in this data container.
 
-#### Step 2 - Create InputLayer
+#### Step 2 - Create input layer
 There is only 1 function:  
-(Here `databox` is a data container described above and `batch_size` is an integer giving the number of observations of the training set in each mini-batch.)  
+(Here, `databox` is a data container described above and `batch_size` is an integer giving the number of observations of the training set in each mini-batch.)  
 - `InputLayer(databox, batch_size)`
+
+#### Step 3 - Create hidden layers
+Each hidden layer has its own constructor. Each constructor starts with the same two arguments. The first one (`datatype` - a floating point data type) is optional (if excluded will default to `Float64`) and the second (`input_dims` - tuple of the size dimensions of the previous layer) is required.  
+
+Following the first two (or one if `datatype` is left out) each hidden layer has it's own positional arguments (each shown below).
+
+And following the positional arguments there are two optional keyword arguments - `activation` (for choosing the activation function) and `init` (for choosing the initialisation of the weights). These are described in more detail in the section below).
+
+The constructor functions are (note that the square brackets around `datatype` are just indicating that it is optional):  
+
+(Here, `fan_out` is the number of neurons in the layer)  
+`FullyConnectedLayer([datatype, ]input_dims, fan_out)`  
+
+(Here, `vocab_size` is the number of words in the vocabulary and `num_feats` is the number of features / length of feature vector given to each word)  
+`WordEmbeddingLayer([datatype, ]input_dims, vocab_size, num_feats)`
+
+(Here, `ρ` is the sparsity parameter and `β` is the parameter controlling the weight of the sparsity penalty term)  
+`SparseEncoderLayer([datatype, ]input_dims, fan_out, ρ, β)`
+
+(Here, `patch_dims` is a tuple giving the size dimensions of the patch / filter used for the convolution operation)  
+`ConvolutionalLayer([datatype, ]input_dims, patch_dims)`
+
+(Here, `stride` is the pooling stride used for the pooling operation - either max or mean)  
+`MeanPoolLayer([datatype, ]input_dims, stride)`  
+`MaxPoolLayer([datatype, ]input_dims, stride)`
