@@ -12,6 +12,8 @@ Pkg.clone("https://github.com/Wedg/Alice.jl.git")
 There are 3 demos that display almost all the functionality. All the data for each one is contained in the repository.
 
 #### MNIST
+![](demo/mnist/mnist.jpg)  
+Predict the digit label (1 to 9) of each image.  
 [html file](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/mnist/Demo_MNIST_28x28.html) (view in browser) or 
 [ipynb file](demo/mnist/Demo_MNIST_28x28.ipynb) (run in Jupyter)
 
