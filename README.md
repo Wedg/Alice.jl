@@ -55,19 +55,21 @@ Output Layers:
 
 ## Building a Neural Network
 #### Step 1 - Place data in a data container
-There are 4 functions available:  
-(Here, `X_train` is an array of training data, `y_train` is an array of target data for the training set, `X_val` is an array of validation data, `y_val` is an array of target data for the validation set, `X_test` is an array of test data, and `y_test` is an array of target data for the test set.)  
+There are 4 functions available:    
 - `Data(X_train)`
 - `Data(X_train, y_train)`
 - `Data(X_train, y_train, X_val, y_val)`
 - `Data(X_train, y_train, X_val, y_val, X_test, y_test)`
 
+(`X_train` is an array of training data, `y_train` is an array of target data for the training set, `X_val` is an array of validation data, `y_val` is an array of target data for the validation set, `X_test` is an array of test data, and `y_test` is an array of target data for the test set.)
+
 Note that a reference to the original data is used as opposed to a copy for better memory management. So if the data is changed that will also change the data in this data container.
 
 #### Step 2 - Create input layer
 There is only 1 function:  
-(Here, `databox` is a data container described above and `batch_size` is an integer giving the number of observations of the training set in each mini-batch.)  
 - `InputLayer(databox, batch_size)`
+
+(`databox` is a data container described above and `batch_size` is an integer giving the number of observations of the training set in each mini-batch.)
 
 #### Step 3 - Create hidden layers
 Each hidden layer has its own constructor. Each constructor starts with the same two arguments. The first one (`datatype` - a floating point data type) is optional (if excluded will default to `Float64`) and the second (`input_dims` - tuple of the size dimensions of the previous layer) is required.  
