@@ -78,7 +78,7 @@ Following the first two (or one if `datatype` is left out) each hidden layer has
 
 And following the positional arguments there are two optional keyword arguments - `activation` (for choosing the activation function) and `init` (for choosing the initialisation of the weights). These are described in more detail in the section below).
 
-The constructor functions are (note that the square brackets around `datatype` are just indicating that it is optional):  
+The constructor functions are (note that the square brackets are just indicating that the argument is optional):  
 
 
 - `FullyConnectedLayer([datatype, ]input_dims, fan_out)`
