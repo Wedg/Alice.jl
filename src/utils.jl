@@ -181,7 +181,7 @@ function load_train_subset()
     train_images6, train_labels6 = load(joinpath(stl10path, "stl_train_subset6.jld"), "train_images6", "train_labels6")
     train_images7, train_labels7 = load(joinpath(stl10path, "stl_train_subset7.jld"), "train_images7", "train_labels7")
     train_images8, train_labels8 = load(joinpath(stl10path, "stl_train_subset8.jld"), "train_images8", "train_labels8")
-    train_labels = cat(4, train_images1, train_images2, train_images3, train_images4,
+    train_images = cat(4, train_images1, train_images2, train_images3, train_images4,
                           train_images5, train_images6, train_images7, train_images8)
     train_labels = vcat(train_labels1, train_labels2, train_labels3, train_labels4,
                         train_labels5, train_labels6, train_labels7, train_labels8)
@@ -202,7 +202,7 @@ function load_test_subset()
     test_images11, test_labels11 = load(joinpath(stl10path, "stl_test_subset11.jld"), "test_images11", "test_labels11")
     test_images12, test_labels12 = load(joinpath(stl10path, "stl_test_subset12.jld"), "test_images12", "test_labels12")
     test_images13, test_labels13 = load(joinpath(stl10path, "stl_test_subset13.jld"), "test_images13", "test_labels13")
-    test_labels = cat(4, train_images1, train_images2, train_images3, train_images4,
+    test_images = cat(4, train_images1, train_images2, train_images3, train_images4,
                          train_images5, train_images6, train_images7, train_images8,
                          train_images9, train_images10, train_images11, train_images12,
                          train_images13)
