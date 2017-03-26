@@ -211,6 +211,6 @@ The `train` function will display the results of training on the training and te
 - `val_loss(net, X, y)` - provides validation loss (without the regularisation cost) on `X` and `y`
 - `loss_and_accuracy(net, X, y)` - provides training loss and accuracy percentage on `X` and `y`
 - `val_loss_and_accuracy(net, X, y)` - provides validation loss (without regularisation cost) and accuracy percentage on `X` and `y`
-- `accuracy(net, X, y)` - provides the accuracy percentage
+- `accuracy(net, X, y)` - provides the accuracy percentage on `X` and `y`
 
 Note that the accuracy functions will only work for Logistic and Softmax output layers.
