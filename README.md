@@ -101,3 +101,24 @@ The constructor functions are (note that the square brackets around `datatype` a
 - `MaxPoolLayer([datatype, ]input_dims, stride)`
 
   (`stride` is the pooling stride used for the pooling operation - either max or mean)
+
+#### Hidden layer activation functions
+The keyword argument `activation` is used to select the activation function (if the layer has an activation - WordEmbeddingLayer, MeanPool and MaxPool do not). The default (i.e. applied if no selection is made is `:logistic`) and the options are:
+- `:logistic` - logistic
+- `:tanh` - hyperbolic tangent
+- `:relu` - rectified linear unit
+
+#### Initialising weights in a hidden layer
+The keyword argument `init` is used to select the distribution which is sampled from to initialise the layer weights. Note that the bias values are set to zero. The option is to provide either a distribution (any distribution from the Distributions package e.g. `Normal(0, 0.01)` or `Uniform(-0.5, 0.5)`) or one of the named options which are the following:  
+- `:glorot_logistic_uniform`
+- `:glorot_logistic_normal`
+- `:glorot_tanh_uniform`
+- `:glorot_tanh_normal`
+- `:he_uniform`
+- `:he_normal`
+- `:lecun_uniform`
+- `:lecun_normal`
+
+The default selection (i.e. applied if no selection is made) is `:glorot_logistic_uniform` for layers with logistic activations, `:glorot_tanh_uniform` for layers with tanh activations, `:he_uniform` for layers with relu activations, and `Normal(0, 0.01)` for the WordEmbeddingLayer.
+
+See [here](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/init.html) for my understanding of the merits of the different named options.
