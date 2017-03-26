@@ -179,7 +179,7 @@ Layer 4 - SoftmaxOutputLayer{Float64,Int64}, Dimensions - (10,128)
 ## Training a Neural Network
 There are 2 broad options for training:
 1. `train` function for stochastic mini-batch training by gradient descent with momentum
-2. `train_nlopt` function for full batch training using the NLopt package that provides an interface to the open-source NLopt library for nonlinear optimisation.
+2. `train_nlopt` function for full batch training using the NLopt package that provides an interface to the open-source NLopt library for nonlinear optimisation
 
 `train` function:
 
