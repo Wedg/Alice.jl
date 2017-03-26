@@ -204,7 +204,7 @@ function load_test_subset()
     test_images13, test_labels13 = load(joinpath(stl10path, "stl_test_subset13.jld"), "test_images13", "test_labels13")
     test_labels = cat(4, train_images1, train_images2, train_images3, train_images4,
                          train_images5, train_images6, train_images7, train_images8,
-                         train_images9, train_images10, train_images11, train_images12
+                         train_images9, train_images10, train_images11, train_images12,
                          train_images13)
     test_labels = vcat(train_labels1, train_labels2, train_labels3, train_labels4,
                        train_labels5, train_labels6, train_labels7, train_labels8,
