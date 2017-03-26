@@ -175,3 +175,15 @@ Layer 2 - FullyConnectedLayer{Float64}, Activation - tanh, Dimensions - (30,128)
 Layer 3 - FullyConnectedLayer{Float64}, Activation - tanh, Dimensions - (30,128)
 Layer 4 - SoftmaxOutputLayer{Float64,Int64}, Dimensions - (10,128)
 ```
+
+## Training a Neural Network
+There are 2 broad options for training:
+1. `train` function for stochastic mini-batch training by gradient descent with momentum
+2. `train_nlopt` function for full batch training using the NLopt package that provides an interface to the open-source NLopt library for nonlinear optimisation.
+
+`train` function:
+
+- `train(net, num_epochs, α, μ[, nesterov = true, shuffle = false, last_train_every = 1, full_train_every = num_epochs, val_every = num_epochs])`
+
+  (Positional arguments - `net` is the neural network, `num_epochs` is the total number of epochs to run through, `α` is the learning rate, `μ` is the momentum parameter)  
+  (Keyword arguments - `nesterov` is whether to use Nesterov's accelerated gradient method (default is `true`, if `false` uses standard momentum method), `shuffle` is whether to randomly shuffle the data before each epoch (default is `false`), `last_train_every` selects the epoch intervals to display the last batch training error (default is `1` i.e. every epoch), `full_train_every` selects the epoch intervals to display the loss on the full training set (default is `num_epochs` i.e. only at the end), and `val_every` selects the epoch intervals to display the loss on the validation set (default is `num_epochs` i.e. only at the end))
