@@ -80,18 +80,23 @@ And following the positional arguments there are two optional keyword arguments 
 
 The constructor functions are (note that the square brackets around `datatype` are just indicating that it is optional):  
 
-(Here, `fan_out` is the number of neurons in the layer)  
-`FullyConnectedLayer([datatype, ]input_dims, fan_out)`  
 
-(Here, `vocab_size` is the number of words in the vocabulary and `num_feats` is the number of features / length of feature vector given to each word)  
-`WordEmbeddingLayer([datatype, ]input_dims, vocab_size, num_feats)`
+- `FullyConnectedLayer([datatype, ]input_dims, fan_out)`  
 
-(Here, `ρ` is the sparsity parameter and `β` is the parameter controlling the weight of the sparsity penalty term)  
-`SparseEncoderLayer([datatype, ]input_dims, fan_out, ρ, β)`
+(`fan_out` is the number of neurons in the layer)
 
-(Here, `patch_dims` is a tuple giving the size dimensions of the patch / filter used for the convolution operation)  
-`ConvolutionalLayer([datatype, ]input_dims, patch_dims)`
+- `WordEmbeddingLayer([datatype, ]input_dims, vocab_size, num_feats)`
 
-(Here, `stride` is the pooling stride used for the pooling operation - either max or mean)  
-`MeanPoolLayer([datatype, ]input_dims, stride)`  
-`MaxPoolLayer([datatype, ]input_dims, stride)`
+(`vocab_size` is the number of words in the vocabulary and `num_feats` is the number of features / length of feature vector given to each word)
+
+- `SparseEncoderLayer([datatype, ]input_dims, fan_out, ρ, β)`
+
+(`ρ` is the sparsity parameter and `β` is the parameter controlling the weight of the sparsity penalty term)
+
+- `ConvolutionalLayer([datatype, ]input_dims, patch_dims)`
+
+(`patch_dims` is a tuple giving the size dimensions of the patch / filter used for the convolution operation)
+
+- `MeanPoolLayer([datatype, ]input_dims, stride)`  
+- `MaxPoolLayer([datatype, ]input_dims, stride)`  
+(`stride` is the pooling stride used for the pooling operation - either max or mean)
