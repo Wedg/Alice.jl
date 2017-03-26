@@ -124,7 +124,6 @@ The default selection (i.e. applied if no selection is made) is `:glorot_logisti
 See [here](http://htmlpreview.github.com/?https://github.com/Wedg/Alice.jl/blob/master/demo/init.html) for my understanding of the merits of the different named options.
 
 #### Step 4 - Create output layers
-
 These are constructed in a similar way to the hidden layers:  
 - `LinearOutputLayer([datatype, ]databox, input_dims)`
 - `MultiLinearOutputLayer([datatype, ]databox, input_dims)`
@@ -134,3 +133,11 @@ These are constructed in a similar way to the hidden layers:
   (`datatype`, `databox`, `input_dims` are as defined above and `num_classes` is an integer giving the number of classes / categories)
   
 There is also the `init` keyword argument that can be used in the same way as initialising the hidden layers. The output layers are initialised to zero by default.
+
+#### Step 5 - Create the neural network
+There is 1 constructor function with 2 methods and 1 keyword argument:  
+- `NeuralNet(databox, layers)`
+- `NeuralNet(databox, layers, λ)`
+- `NeuralNet(databox, layers, λ, regularisation = :L2)`
+
+  (`databox` is as defined above, `layers` is a vector of layers, `λ` is the regularisation parameter and , `regularisation` is the keyword argument for the type of regularisation - options are `:L1` and `:L2` (the default))
