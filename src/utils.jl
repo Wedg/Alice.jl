@@ -31,15 +31,15 @@ end
 
 # Display string for layers with activation functions
 function displaystr(ℓ::NetLayer)
-    str = "$(typeof(ℓ))"
-    activation = "$(ℓ.f!)"[1:end-1]
+    str = string(typeof(ℓ))[7:end]
+    activation = "$(ℓ.f!)"[7:end-1]
     str *= ", Activation - $activation"
     str *= ", Dimensions - $(size(ℓ))"
 end
 
 # Display string for layers without activation functions
 function displaystr{L <: Union{InputLayer, WordEmbeddingLayer, PoolLayer, OutputLayer}}(ℓ::L)
-    str = "$(typeof(ℓ))"
+    str = string(typeof(ℓ))[7:end]
     str *= ", Dimensions - $(size(ℓ))"
 end
 
