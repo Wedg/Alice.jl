@@ -434,7 +434,8 @@ function check_gradients(bignet::NeuralNet; detail=false)
     # Print
     println("Check gradients of a tiny network with similar architecture:\n")
     ℓ = net.layers[1]
-    print_with_color(:blue, "Layer 1, $(typeof(ℓ)), Dimensions - $(size(ℓ.A)) :\n\n")
+    str = "Layer 1, " * string(typeof(ℓ))[7:end] * ", Dimensions - $(size(ℓ.A)) :\n\n"
+    print_with_color(:blue, str)
 
     for (n, ℓ) in enumerate(net.layers[2:end])
 
