@@ -1,6 +1,6 @@
 # Alice.jl
 
-A deep learning package built in Julia.
+A deep learning package for supervised learning built in Julia.
 
 The package is not yet registered so to download, run the command:
 ```jlcon
