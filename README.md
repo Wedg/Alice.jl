@@ -55,7 +55,7 @@ Output Layers:
 
 ## Building a Neural Network
 #### Step 1 - Place data in a data container
-There are 4 functions available:    
+There are 4 methods available:    
 - `Data(X_train)`
 - `Data(X_train, y_train)`
 - `Data(X_train, y_train, X_val, y_val)`
@@ -66,7 +66,7 @@ There are 4 functions available:
 Note that a reference to the original data is used as opposed to a copy for better memory management. So if the data is changed that will also change the data in this data container.
 
 #### Step 2 - Create input layer
-There is only 1 function:  
+There is only 1 method:  
 - `InputLayer(databox, batch_size)`
 
   (`databox` is a data container described above and `batch_size` is an integer giving the number of observations of the training set in each mini-batch.)
