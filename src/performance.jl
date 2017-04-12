@@ -283,3 +283,37 @@ predictions(ℓ::LogisticOutputLayer) = round(Int, ℓ.A)
 
 # Predicted value for Linear Output Layer = Hypothesis
 predictions(ℓ::LinearOutputLayer) = ℓ.A
+
+# Predictions for data set
+function predictions(net::NeuralNet, X, y)
+
+    # Number of batches
+    num_obs = size(X)[end]
+    num_batches = div(num_obs, net.batch_size)
+
+    # ℓ1 = first layer, L = final layer
+    ℓ1 = net.layers[1]
+    L = net.layers[end]
+
+    # Create empty array for predictions
+    pred = Array(eltype(L.y), 0)
+
+    # Loop over mini batches
+    for batch = 1:num_batches
+
+        # Update network with next batch
+        stop = batch * net.batch_size
+        start = stop - net.batch_size + 1
+        ℓ1.A[:] = viewbatch(X, start, stop)
+        L.y[:] = viewbatch(y, start, stop)
+
+        # Feed forward
+        fwd_prop!(net)
+
+        # Push predictions to array
+        append!(pred, predictions(L))
+    end
+
+    # Accuracy (%)
+    return pred
+end

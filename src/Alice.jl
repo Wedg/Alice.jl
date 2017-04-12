@@ -27,9 +27,10 @@ export Data, InputLayer, FullyConnectedLayer, WordEmbeddingLayer,
        LinearOutputLayer, MultiLinearOutputLayer, LogisticOutputLayer,
        SoftmaxOutputLayer, NeuralNet, tinynet, check_gradients,
        load_ngrams, load_patches, load_train_subset, load_test_subset,
-       load_features, 
+       load_features,
        fwd_prop!, bwd_prop!, train, train_nlopt,
        loss, val_loss, loss_and_accuracy, val_loss_and_accuracy, accuracy,
+       predictions,
        size, viewbatch, display_nearest_words, predict_next_word,
        plot_loss_history, display_rgb_cols, display_rgb_weights
 
